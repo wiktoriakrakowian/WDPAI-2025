@@ -8,6 +8,9 @@
 body {
     background-color: #DDF0FF;
     margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 #login-page > div {
@@ -34,6 +37,20 @@ body {
     padding: 1em;
 }
 
+#login-page > div > img {
+    margin-top: -8.5em;
+    width: 150px;
+    height: 150px;
+}
+
+#login-page > div > h1 {
+    font-family: "Finger Paint", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5em;
+    color: #FEEEF1;
+}
+
 #login-page > div > form > input {
     width: 100%;
     border-radius: 1em;
@@ -41,14 +58,30 @@ body {
     background-color: #FEEEF1;
     height: 2em;
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #92817A;
+    font-weight: bolder;
+    padding-left: 1em;
+    padding-right: 1em;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 #login-page > div > form > button {
     background-color: #FEEEF1;
     color: #2F4858;
-    width: 100%;
-    height: 3em;
+    width: 50%;
+    height: 2em;
     border-radius: 1em;
     border: none;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+#login-page > div > form > button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
