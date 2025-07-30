@@ -7,17 +7,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="../styles/login.css" rel="stylesheet">
-    
     <script src="https://kit.fontawesome.com/529164580a.js" crossorigin="anonymous"></script>
     <title>LOGIN</title>
 </head>
-<body id="login-page">
-    <div>
+<body id="login-page" class="flex-row-center-center">
+    <div class="flex-column-center-center">
         <img src="../logo/bookshelf.png" alt="Minecraft bookshelf">
         <h1>STUDY TRACKER</h1>
         <form>
-            <input type="login" placeholder="login">
-            <input type="password" placeholder="password">
+            <div class="form-control">            
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" placeholder="email">
+            </div>
+            <div class="form-control">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="password">
+            </div>
             <button type="submit">LOG IN <i class="fa-solid fa-right-to-bracket"></i></button>
         </form>
     </div>

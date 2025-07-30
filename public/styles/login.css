@@ -1,87 +1,166 @@
-#login-page {
+:root {
+    /* Colors */
+    --primary-bg: #DDF0FF;
+    --primary-dark: #582630;
+    --accent-bg: #FEEEF1;
+    --text-color: #92817A;
+    --button-color: #2F4858;
+
+    /* Font Families */
+    --font-main: "Montserrat", sans-serif;
+    --font-heading: "Finger Paint", sans-serif;
+
+    /* Font Weights */
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+
+    /* Font Sizes (optional) */
+    --font-size-base: 1rem;
+    --font-size-heading: 2.5rem;
+
+    /* Font Styles (optional) */
+    --font-style-normal: normal;
+}
+
+
+/* Utility Classes */
+.flex-row-center-center,
+.flex-column-center-center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.flex-column-center-center {
+    flex-direction: column;
+}
+
+/* Page Layout */
+#login-page {
     height: 100vh;
+    background-color: var(--primary-bg);
 }
 
 body {
-    background-color: #DDF0FF;
-    margin: 0;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-main);
+    font-style: var(--font-style-normal);
     font-optical-sizing: auto;
-    font-style: normal;
 }
 
+/* Login Container */
 #login-page > div {
-    border: 1px solid #582630;
-    padding: 3em;
-    border-radius: 2em;
-    background-color: #582630;
+    background-color: var(--primary-dark);
+    border: 1px solid var(--primary-dark);
+    padding: 3rem;
+    border-radius: 2rem;
     width: 30%;
-    height: calc(0.4 * 100vh);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    flex-direction: column;
+    box-shadow: 
+        rgba(60, 64, 67, 0.3) 0px 1px 2px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
-#login-page > div > form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 1em;
-    width: 100%;
-    padding: 1em;
+/* Responsive Widths */
+@media (max-width: 900px) {
+    #login-page > div {
+        width: 100%;
+    }
 }
 
+@media (max-width: 600px) {
+    #login-page > div {
+        width: 80%;
+    }
+}
+
+/* Logo Styling */
 #login-page > div > img {
-    margin-top: -8.5em;
     width: 150px;
     height: 150px;
+    margin-top: -8.5rem;
 }
 
+/* Title Styling */
 #login-page > div > h1 {
-    font-family: "Finger Paint", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 2.5em;
-    color: #FEEEF1;
+    font-family: var(--font-heading);
+    font-size: var(--font-size-heading);
+    font-weight: var(--font-weight-normal);
+    font-style: var(--font-style-normal);
+    color: var(--accent-bg);
+}
+/* Form Styling */
+#login-page > div > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
 }
 
-#login-page > div > form > input {
+/* Input Fields */
+.form-control {
     width: 100%;
-    border-radius: 1em;
+    position: relative;
+}
+
+.form-control > input {
+    padding-left: 2.5rem;
+}
+
+.form-control > i {
+    position: absolute;
+    bottom: 0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+}
+
+input {
+    width: 100%;
+    height: 2rem;
+    padding: 0 1rem 0 1rem;
     border: none;
-    background-color: #FEEEF1;
-    height: 2em;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    border-radius: 1rem;
+    background-color: var(--accent-bg);
+    box-shadow:
+        rgb(204, 219, 232) 3px 3px 6px inset,
+        rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    color: #92817A;
     font-weight: bolder;
-    padding-left: 1em;
-    padding-right: 1em;
-    box-sizing: border-box;
+    color: var(--text-color);
     text-align: center;
+    box-sizing: border-box;
 }
 
-#login-page > div > form > button {
-    background-color: #FEEEF1;
-    color: #2F4858;
+/* button styling */
+button {
     width: 50%;
-    height: 2em;
-    border-radius: 1em;
+    margin-top: 1rem;
+    height: 3rem;
+    background-color: var(--accent-bg);
+    color: var(--button-color);
     border: none;
+    border-radius: 3rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: bolder;
+    transition: transform 0.2s ease;
 }
 
-#login-page > div > form > button:hover {
-    transform: scale(1.1);
+button:hover {
+    transform: scale(1.05);
     cursor: pointer;
+}
+
+/* Print Styles */
+@media print {
+    #login-page > div {
+        border: 2px dashed gray;
+    }
 }
