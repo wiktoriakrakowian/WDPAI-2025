@@ -1,29 +1,25 @@
 :root {
-    /* Colors */
+    /* colors */
     --primary-bg: #DDF0FF;
     --primary-dark: #582630;
     --accent-bg: #FEEEF1;
     --text-color: #92817A;
     --button-color: #2F4858;
 
-    /* Font Families */
+    /* fonts */
     --font-main: "Montserrat", sans-serif;
     --font-heading: "Finger Paint", sans-serif;
 
-    /* Font Weights */
     --font-weight-normal: 400;
     --font-weight-bold: 700;
 
-    /* Font Sizes (optional) */
     --font-size-base: 1rem;
     --font-size-heading: 2.5rem;
 
-    /* Font Styles (optional) */
     --font-style-normal: normal;
 }
 
 
-/* Utility Classes */
 .flex-row-center-center,
 .flex-column-center-center {
     display: flex;
@@ -35,7 +31,7 @@
     flex-direction: column;
 }
 
-/* Page Layout */
+/* page layout */
 #login-page {
     height: 100vh;
     background-color: var(--primary-bg);
@@ -49,7 +45,7 @@ body {
     font-optical-sizing: auto;
 }
 
-/* Login Container */
+/* login container */
 #login-page > div {
     background-color: var(--primary-dark);
     border: 1px solid var(--primary-dark);
@@ -74,14 +70,13 @@ body {
     }
 }
 
-/* Logo Styling */
+/* logo, title and form styling */
 #login-page > div > img {
     width: 150px;
     height: 150px;
     margin-top: -8.5rem;
 }
 
-/* Title Styling */
 #login-page > div > h1 {
     font-family: var(--font-heading);
     font-size: var(--font-size-heading);
@@ -89,7 +84,7 @@ body {
     font-style: var(--font-style-normal);
     color: var(--accent-bg);
 }
-/* Form Styling */
+
 #login-page > div > form {
     display: flex;
     flex-direction: column;
@@ -100,7 +95,7 @@ body {
     padding: 1rem;
 }
 
-/* Input Fields */
+/* input fields */
 .form-control {
     width: 100%;
     position: relative;
@@ -158,11 +153,4 @@ button {
 button:hover {
     transform: scale(1.05);
     cursor: pointer;
-}
-
-/* Print Styles */
-@media print {
-    #login-page > div {
-        border: 2px dashed gray;
-    }
 }
