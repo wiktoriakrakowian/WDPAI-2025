@@ -14,7 +14,10 @@
     --font-weight-bold: 700;
 
     --font-size-base: 1rem;
+    --font-size-base-phones: 0.8rem;
     --font-size-heading: 2.5rem;
+    --font-size-heading-tablets: 2rem;
+    --font-size-heading-phones: 1.5rem;
 
     --font-style-normal: normal;
 }
@@ -32,38 +35,25 @@
 }
 
 /* login container */
-#login-page > div {
+#login-page>div {
     background-color: var(--primary-dark);
     border: 1px solid var(--primary-dark);
     padding: 3rem;
     border-radius: 2rem;
-    width: 30%;
-    box-shadow: 
+    width: 40%;
+    box-shadow:
         rgba(60, 64, 67, 0.3) 0px 1px 2px,
         rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
-/* Responsive Widths */
-@media (max-width: 900px) {
-    #login-page > div {
-        width: 100%;
-    }
-}
-
-@media (max-width: 600px) {
-    #login-page > div {
-        width: 80%;
-    }
-}
-
 /* logo, title and form styling */
-#login-page > div > img {
+#login-page>div>img {
     width: 150px;
     height: 150px;
     margin-top: -8.5rem;
 }
 
-#login-page > div > h1 {
+#login-page>div>h1 {
     font-family: var(--font-heading);
     font-size: var(--font-size-heading);
     font-weight: var(--font-weight-normal);
@@ -71,7 +61,7 @@
     color: var(--accent-bg);
 }
 
-#login-page > div > form {
+#login-page>div>form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -87,11 +77,11 @@
     position: relative;
 }
 
-.form-control > input {
+.form-control>input {
     padding-left: 2.5rem;
 }
 
-.form-control > i {
+.form-control>i {
     position: absolute;
     bottom: 0;
     width: 2rem;
@@ -100,6 +90,7 @@
     justify-content: center;
     align-items: center;
     font-weight: 900;
+    color: var(--text-color);
 }
 
 input {
@@ -112,10 +103,10 @@ input {
     box-shadow:
         rgb(204, 219, 232) 3px 3px 6px inset,
         rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-main);
     font-optical-sizing: auto;
-    font-style: normal;
-    font-weight: bolder;
+    font-style: var(--font-style-normal);
+    font-weight: var(--font-weight-bold);
     color: var(--text-color);
     text-align: center;
     box-sizing: border-box;
@@ -123,7 +114,7 @@ input {
 
 /* button styling */
 button {
-    width: 50%;
+    width: 40%;
     margin-top: 1rem;
     height: 3rem;
     background-color: var(--accent-bg);
@@ -139,4 +130,48 @@ button {
 button:hover {
     transform: scale(1.05);
     cursor: pointer;
+}
+
+/* responsive widths */
+@media (max-width: 900px) {
+    #login-page>div {
+        width: 60%;
+    }
+
+    #login-page>div>h1 {
+        font-size: var(--font-size-heading-tablets);
+    }
+
+    button {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    #login-page>div {
+        width: 70%;
+    }
+
+    #login-page>div>h1 {
+        font-size: var(--font-size-heading-phones);
+    }
+
+    .form-control {
+        font-size: var(--font-size-base-phones);
+    }
+
+    #login-page>div>form {
+        padding: 0.5rem;
+        gap: 1.5rem;
+    }
+
+    input {
+        font-size: var(--font-size-base-phones);
+    }
+
+    button {
+        width: 50%;
+        height: 2.5rem;
+        font-size: 1rem;
+    }
 }
