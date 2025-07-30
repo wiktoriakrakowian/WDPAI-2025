@@ -1,0 +1,33 @@
+:root {
+    /* colors */
+    --primary-bg: #DDF0FF;
+    --primary-dark: #582630;
+    --accent-bg: #FEEEF1;
+    --text-color: #92817A;
+    --button-color: #2F4858;
+
+    /* fonts */
+    --font-main: "Montserrat", sans-serif;
+    --font-heading: "Finger Paint", sans-serif;
+
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+
+    --font-size-base: 1rem;
+    --font-size-heading: 2.5rem;
+
+    --font-style-normal: normal;
+}
+
+#login-page {
+    height: 100vh;
+    background-color: var(--primary-bg);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-main);
+    font-style: var(--font-style-normal);
+    font-optical-sizing: auto;
+}

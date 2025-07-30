@@ -31,20 +31,6 @@
     flex-direction: column;
 }
 
-/* page layout */
-#login-page {
-    height: 100vh;
-    background-color: var(--primary-bg);
-}
-
-body {
-    padding: 0;
-    margin: 0;
-    font-family: var(--font-main);
-    font-style: var(--font-style-normal);
-    font-optical-sizing: auto;
-}
-
 /* login container */
 #login-page > div {
     background-color: var(--primary-dark);
