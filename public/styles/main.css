@@ -1,22 +1,25 @@
 :root {
     /* colors */
-    --primary-bg:      #DDF0FF;
-    --primary-dark:    #582630;
-    --accent-bg:       #FEEEF1;
-    --text-color:      #92817A;
-    --button-color:    #2F4858;
+    --primary-bg: #DDF0FF;
+    --primary-dark: #582630;
+    --accent-bg: #FEEEF1;
+    --text-color: #92817A;
+    --button-color: #2F4858;
 
     /* fonts */
-    --font-main:       "Montserrat", sans-serif;
-    --font-heading:    "Finger Paint", sans-serif;
+    --font-main: "Montserrat", sans-serif;
+    --font-heading: "Finger Paint", sans-serif;
 
     --font-weight-normal: 400;
-    --font-weight-bold:   700;
-    --font-style-normal:  normal;
+    --font-weight-bold: 700;
+    --font-style-normal: normal;
 
-    --font-size-base:     0.7rem;
-    --font-size-heading:  0.7rem;
-    --font-size-menu:     2.2rem;
+    --font-size-base: 0.7rem;
+    --font-size-heading: 0.7rem;
+    --font-size-menu: 2.2rem;
+
+    --font-size-base-phones: 0.5rem;
+    --font-size-menu-phones: 1.5rem;
 }
 
 /* style */
@@ -59,10 +62,9 @@ h1 {
 /* style of the menu */
 .menu {
     display: flex;
-    align-items: flex-end;
-    gap: 4rem;
-    padding-left: 8rem;
-    padding-bottom: 1rem;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1.5rem 3rem 1rem 3rem;
 
     background-color: var(--primary-dark);
     border-radius: 0 0 0 50rem;
@@ -72,7 +74,7 @@ h1 {
         rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
-.menu > button {
+.menu>button {
     display: flex;
     flex-direction: column;
     background: none;
@@ -99,11 +101,11 @@ h1 {
 }
 
 /* hover effect on menu */
-.menu > button:hover .emoji {
+.menu>button:hover .emoji {
     transform: translateY(-0.7rem);
 }
 
-.menu > button:hover .label {
+.menu>button:hover .label {
     opacity: 1;
     transform: translateY(0);
 }
@@ -111,4 +113,52 @@ h1 {
 /* make menu not to move randomly */
 .nowrap {
     white-space: nowrap;
+}
+
+/* responsive widths */
+@media (max-width: 900px) {
+    .menu {
+        padding: 0.5rem 1rem 0.3rem 1.5rem;
+    }
+    .emoji {
+        font-size: var(--font-size-menu-phones);
+    }
+    .menu .label {
+        font-size: var(--font-size-base-phones);
+    }
+}
+
+@media (max-width: 600px) {
+    .logo-and-menu {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        padding: 2rem 2rem 1rem 1rem;
+
+        border-radius: 50rem 0 0 0;
+
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px -1px -2px,
+            rgba(60, 64, 67, 0.15) 0px -2px 6px 2px;
+    }
+
+    .emoji {
+        font-size: var(--font-size-menu-phones);
+    }
+
+    .menu .label {
+        font-size: var(--font-size-base-phones);
+    }
 }
