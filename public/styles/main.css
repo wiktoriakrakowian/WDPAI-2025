@@ -39,6 +39,8 @@ body {
 }
 
 .logo-and-menu {
+    position: fixed;
+    width: 100vw;
     display: grid;
     grid-template-columns: 1.7fr 3fr;
     grid-template-rows: auto auto;
