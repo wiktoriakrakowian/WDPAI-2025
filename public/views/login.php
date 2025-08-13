@@ -22,16 +22,24 @@
     <div class="flex-column-center-center">
         <img src="public/logo/bookshelf.png" alt="Minecraft bookshelf">
         <h1>STUDY TRACKER</h1>
-        <form>
+        <form action="login" method="POST">
             <div class="form-control">            
                 <i class="fa-solid fa-envelope"></i>
-                <input type="email" placeholder="email">
+                <input name="email" type="email" placeholder="email">
             </div>
             <div class="form-control">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="password">
+                <input name="password" type="password" placeholder="password">
             </div>
             <button type="submit">LOG IN <i class="fa-solid fa-right-to-bracket"></i></button>
+            <div class="messages">
+                <?php if (isset($messages)) {
+                    foreach ($messages as $message) {
+                        echo $message;
+                    }
+                }
+                ?>
+            </div>
         </form>
     </div>
 </body>
