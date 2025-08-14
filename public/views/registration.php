@@ -11,6 +11,7 @@
     <!-- css -->
     <link href="/public/styles/main.css" rel="stylesheet">
     <link href="/public/styles/login.css" rel="stylesheet">
+    <link href="/public/styles/registration.css" rel="stylesheet">
     
     <!-- emoji -->
     <script src="https://kit.fontawesome.com/529164580a.js" crossorigin="anonymous"></script>
@@ -22,14 +23,14 @@
     <div class="flex-column-center-center">
         <img src="public/logo/bookshelf.png" alt="Minecraft bookshelf">
         <h1>STUDY TRACKER</h1>
-        <form action="login" method="POST">
-            <div class="messages">
-                <?php if (isset($messages)) {
-                    foreach ($messages as $message) {
-                        echo $message;
-                    }
-                }
-                ?>
+        <form action="register" method="POST">
+            <div class="form-control">            
+                <i class="fa-solid fa-user-check"></i>
+                <input name="name" type="name" placeholder="name">
+            </div>
+            <div class="form-control">            
+                <i class="fa-solid fa-user-check"></i>
+                <input name="surname" type="surname" placeholder="surname">
             </div>
             <div class="form-control">            
                 <i class="fa-solid fa-envelope"></i>
@@ -39,8 +40,14 @@
                 <i class="fa-solid fa-lock"></i>
                 <input name="password" type="password" placeholder="password">
             </div>
-            <button type="submit">LOG IN <i class="fa-solid fa-right-to-bracket"></i></button>
+            <button type="submit">REGISTER <i class="fa-solid fa-check"></i></button>
         </form>
+        <div>
+            <form class="skip-registration" action="login" method="get">
+                <p>Already have an account?</p>
+                <button type="submit">LOG IN <i class="fa-solid fa-right-to-bracket"></i></button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

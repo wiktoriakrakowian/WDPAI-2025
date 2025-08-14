@@ -8,7 +8,7 @@ class SecurityController extends AppController {
         $user = new User('jsnow@pk.edu.pl', 'admin', 'John', 'Snow');
 
         if (!$this->isPost()) {
-            return $this->login('login');
+            return $this->render('login');
         }
 
         $email = $_POST["email"];
@@ -18,7 +18,7 @@ class SecurityController extends AppController {
             return $this->render('login', ['messages' => ['Wrong email.']]);
         }
 
-        if ($user->getPassword() !== $password) {
+        if (!password_verify($password, $user->getPassword())) {
             return $this->render('login', ['messages' => ['Wrong password.']]);
         }
 
@@ -26,5 +26,20 @@ class SecurityController extends AppController {
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/dashboard");
+    } 
+
+    public function register() {
+        if (!$this->isPost()) {
+            return $this->render('registration');
+        }
+        $name = $_POST['name'];
+        $surname = $_POST['surname'];
+        $email = $_POST['email'];
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $user = new User($email, $password, $name, $surname);
+        // TODO add user to the database (and validation)
+
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/login");
     }
 }
